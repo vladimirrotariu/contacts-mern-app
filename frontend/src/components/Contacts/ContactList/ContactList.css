@@ -1,0 +1,16 @@
+.contacts {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  font-size: 1.6rem;
+}
+
+.contacts > p {
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
