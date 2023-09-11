@@ -13,7 +13,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["lcov", "text"],
-      include: ["frontend/src/components/Button/*.{ts,tsx}"],
+      include: ["frontend/src/components/{Button,Header}/*.{ts,tsx}"],
       exclude: [
         "**/*.test.{ts,tsx}",
         "**/types.ts",
