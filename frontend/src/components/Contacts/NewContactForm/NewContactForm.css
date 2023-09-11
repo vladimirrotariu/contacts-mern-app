@@ -1,0 +1,10 @@
+.new-contact {
+  width: 90%;
+  max-width: 40rem;
+  background-color: white;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
