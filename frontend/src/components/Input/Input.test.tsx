@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
+import { vi } from "vitest";
 import Input from "./Input";
 
 describe("Given an Input component of type number", () => {
@@ -10,12 +12,7 @@ describe("Given an Input component of type number", () => {
       const id = "age";
       const value = "25";
       const placeholder = "19"
-
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const ageChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        return;
-      };
-      const onChange = ageChangeHandler;
+      const onChange = vi.fn();
 
       render(<Input type={type} label={label} id={id} value={value} onChange={onChange} placeholder={placeholder} />);
 
