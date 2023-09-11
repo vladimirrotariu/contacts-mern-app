@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Button from "./Button";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 
 describe("Given a Button component", () => {
   describe("When given the text 'SUBMIT'", () => {
