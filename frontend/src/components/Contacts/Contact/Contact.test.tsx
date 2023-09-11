@@ -4,25 +4,28 @@ import React from "react";
 import Contact from "./Contact";
 
 describe("Given a Contact component", () => {
+  const nameSarah = "Sarah";
+  const ageSarah = 30;
+  const emailSarah = "sarahknauss@gmail.es";
+  const phoneSarah = "+3492040200";
+
   describe("When given a contact whose name is 'Sarah'", () => {
     test("Then it should show the name 'Sarah'", () => {
-      const nameSarah = "Sarah";
-      const ageSarah = 0;
-      const emailSarah = "";
-      const phoneSarah = "";
-
-      /*const contactSarah = {
-        name,
-        age,
-        email,
-        phone
-      }*/
-
       render(<Contact name={nameSarah} age={ageSarah} email={emailSarah} phone={phoneSarah} />);
 
       const nameSarahElement = screen.getByText("Sarah");
 
       expect(nameSarahElement).toBeInTheDocument();
+    })
+  })
+
+  describe("When given a contact whose age is 30", () => {
+    test("Then it should show the age of the contact as '30'", () => {
+      render(<Contact name={nameSarah} age={ageSarah} email={emailSarah} phone={phoneSarah} />);
+
+      const ageSarahElement = screen.getByText("Age: 30 years");
+
+      expect(ageSarahElement).toBeInTheDocument();
     })
   })
 })
