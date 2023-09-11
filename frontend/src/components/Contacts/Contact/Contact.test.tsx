@@ -28,4 +28,14 @@ describe("Given a Contact component", () => {
       expect(ageSarahElement).toBeInTheDocument();
     })
   })
+
+  describe("When given a contact whose email is 'sarahknauss@gmail.es'", () => {
+    test("Then it should show the email of the contact as 'sarahknauss@gmail.es'", () => {
+      render(<Contact name={nameSarah} age={ageSarah} email={emailSarah} phone={phoneSarah} />);
+
+      const emailSarahElement = screen.getByText("Email: sarahknauss@gmail.es");
+
+      expect(emailSarahElement).toBeInTheDocument();
+    })
+  })
 })
