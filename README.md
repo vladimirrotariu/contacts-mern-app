@@ -1,13 +1,15 @@
-## BoughtProducts
+# ContacsApp
 
-An app to record the bought products, providing authentication with your own Google account.
+## Description
 
-## Scripts
+An app to store your contacts, with information such as name, age, email, phone number...
 
-`npm run build`: builds the app
+### Important
+Currently in-memory storage, will switch to MongoDB.
 
-`npm run preview`: runs the built app
+## Backend scripts
 
-`npm run dev`: starts a development server
+`npm run start`: runs the server
 
-`npm run lint`: runs ESLint
+##
+
