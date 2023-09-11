@@ -12,6 +12,7 @@ const Input = (props: InputProps): React.ReactElement => {
         id={props.id}
         value={props.value}
         onChange={props.onChange}
+        placeholder={props.placeholder}
         min={0}
       />
     </div>
