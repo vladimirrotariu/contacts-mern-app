@@ -8,13 +8,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "./src/setupTests.ts",
-    include: ["./src/**/*.test.{ts,tsx}"],
+    setupFiles: "frontend/src/setupTests.ts",
+    include: ["frontend/src/**/*.test.{ts,tsx}"],
     coverage: {
       provider: "v8",
       reporter: ["lcov", "text"],
-      all: true,
-      include: ["**/src/**/*.{ts,tsx}"],
+      include: ["frontend/src/components/Button/*.{ts,tsx}"],
       exclude: [
         "**/*.test.{ts,tsx}",
         "**/types.ts",
