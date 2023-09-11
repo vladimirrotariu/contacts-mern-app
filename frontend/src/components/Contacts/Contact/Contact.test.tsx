@@ -38,4 +38,14 @@ describe("Given a Contact component", () => {
       expect(emailSarahElement).toBeInTheDocument();
     })
   })
+
+  describe("When given a contact whose phone is '+3492040200'", () => {
+    test("Then it should show the phone of the contact as '+3492040200'", () => {
+      render(<Contact name={nameSarah} age={ageSarah} email={emailSarah} phone={phoneSarah} />);
+
+      const phoneSarahElement = screen.getByText("Phone: +3492040200");
+
+      expect(phoneSarahElement).toBeInTheDocument();
+    })
+  })
 })
