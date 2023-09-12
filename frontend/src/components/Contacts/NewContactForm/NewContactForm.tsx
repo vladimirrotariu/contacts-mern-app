@@ -6,7 +6,7 @@ import Button from "../../Button/Button";
 import Input from "../../Input/Input";
 import "./NewContactForm.css";
 
-const NewContactForm = (props: NewContactFormProps) => {
+const NewContactForm = ({ onAddContact, textButton }: NewContactFormProps) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -32,7 +32,7 @@ const NewContactForm = (props: NewContactFormProps) => {
 
   const submitContactHandler: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    props.onAddContact(enteredName, enteredAge, enteredEmail, enteredPhone);
+    onAddContact(enteredName, enteredAge, enteredEmail, enteredPhone);
   };
 
   return (
@@ -71,7 +71,7 @@ const NewContactForm = (props: NewContactFormProps) => {
           onChange={phoneChangeHandler}
           placeholder="+31094887472999"
         />
-        <Button type="submit" textButton={props.textButton}></Button>
+        <Button type="submit" textButton={textButton}></Button>
       </form>
     </section>
   );
