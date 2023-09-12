@@ -1,0 +1,48 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: white;
+}
+
+body {
+  background-color: whitesmoke;
+}
+main {
+  margin-top: 7rem;
+}
+
+.load_flag {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
