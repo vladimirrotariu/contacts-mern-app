@@ -5,7 +5,9 @@
   "type": "module",
   "description": "The backend for the Contacts App",
   "scripts": {
-    "start": "npx tsc && node ./dist/server/server.js"
+    "start": "npx tsc && node ./dist/server/server.js",
+    "build": "node ./dist/server/server.js",
+    "compile": "npx tsc"
   },
   "author": "",
   "license": "ISC",
