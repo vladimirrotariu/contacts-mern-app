@@ -31,6 +31,8 @@ class ContactsStore {
 
     const collection = db().collection("contacts");
     await collection.insertOne(contact);
+
+    await client.close();
   }
 
   async readAll(): Promise<ContactStored[]> {
@@ -40,6 +42,8 @@ class ContactsStore {
     const contactsCursor = collection.find({});
 
     const contactDocs = await contactsCursor.toArray();
+
+    await client.close();
 
     return contactDocs.map<ContactStored>(doc => ({
       id: doc.id,
