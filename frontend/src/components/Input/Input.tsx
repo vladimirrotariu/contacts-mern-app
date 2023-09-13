@@ -3,16 +3,16 @@ import React from "react";
 import { InputProps } from "../../utils/types";
 import "./Input.css";
 
-const Input = (props: InputProps): React.ReactElement => {
+const Input = ({ id, label, type, value, placeholder, onChange }: InputProps): React.ReactElement => {
   return (
     <div className="input">
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
-        type={props.type}
-        id={props.id}
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
+        type={type}
+        id={id}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
         min={0}
       />
     </div>
