@@ -8,15 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-backend/dist/models
-backend/dist/server
 frontend/dist/assets/
 frontend/dist/index.html
 dist-ssr
 *.local
 *.js
 *js.map
-!types.js
+
 
 # Editor directories and files
 .vscode/*
