@@ -1,11 +1,14 @@
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import express from "express";
 import pkg from "uuid";
-import { ContactStored } from "../types/types.js";
+import ContactsStore from "../models/contacts-store-mongodb.js";
 const { v4: uuidv4 } = pkg;
 
 
 const app = express();
+dotenv.config();
+const contactsStoreOperations = new ContactsStore();
 
 app.use(bodyParser.json());
 
@@ -26,9 +29,8 @@ app.use((req, res, next) => {
   next();
 });
 
-const contacts = [] as ContactStored[]; //BETA VERSION: in-memory storage for now
-
-app.get("/contacts", (req, res) => {
+app.get("/contacts", async (req, res) => {
+  const contacts = await contactsStoreOperations.readAll();
   res.status(200).json({ contacts: contacts });
 });
 
@@ -68,7 +70,7 @@ app.post("/contact", (req, res) => {
     phone
   };
 
-  contacts.push(createdContact);
+  contactsStoreOperations.create(createdContact);
 
   res
     .status(201)

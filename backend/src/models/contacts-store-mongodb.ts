@@ -1,12 +1,24 @@
-import mongodb from "mongodb";
 import { ContactStored } from "../types/types.js";
 
-const MongoClient = mongodb.MongoClient;
-let client: mongodb.MongoClient;
+import dotenv from "dotenv";
+import { MongoClient, ServerApiVersion } from "mongodb";
+dotenv.config();
+
+const uri = process.env.DATABASE_URL;
+let client: MongoClient;
 
 
 const connectMongoDB = async () => {
-  if (!client) client = await MongoClient.connect(process.env.DATABASE_URL);
+  if (!client) {
+    client = new MongoClient(uri, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+       strict: true,
+       deprecationErrors: true
+      }
+    });
+    await client.connect();
+  }
 }
 
 const db = () => {
@@ -14,45 +26,28 @@ const db = () => {
 }
 
 class ContactsStore {
-  async close() {
-    if (client) client.close();
-    client = undefined;
-  }
-
   async create(contact: ContactStored) {
     await connectMongoDB();
 
     const collection = db().collection("contacts");
     await collection.insertOne(contact);
-
-    this.close();
   }
 
-  async readAll(id: string): Promise<ContactStored[]> {
+  async readAll(): Promise<ContactStored[]> {
     await connectMongoDB();
-
-    const collection = db().collection("contacts");
-
-    const contacts = await new Promise((resolve) => {
-      const contacts = [] as ContactStored[];
-
-      collection.find({}).forEach(
-        (contactDocument) => { 
-          const contact = {
-            id: contactDocument.id,
-            name: contactDocument.name,
-            age: contactDocument.age,
-            email: contactDocument.email,
-            phone: contactDocument.phone
-          }
-          contacts.push(contact);
-        }
-      )
-      resolve(contacts);
-    })
     
-    this.close();
-    return contacts as ContactStored[];
+    const collection = db().collection("contacts");
+    const contactsCursor = collection.find({});
+
+    const contactDocs = await contactsCursor.toArray();
+
+    return contactDocs.map<ContactStored>(doc => ({
+      id: doc.id,
+      name: doc.name,
+      age: doc.age,
+      email: doc.email,
+      phone: doc.phone,
+    }));
   }
 }
 
