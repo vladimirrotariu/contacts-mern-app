@@ -13,12 +13,13 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["lcov", "text"],
-      include: ["frontend/src/components/{Button,Header,Input}/*.{ts,tsx}", "frontend/src/components/Contacts/{Contact,NewContactForm}/*.{ts,tsx}"],
+      include: ["frontend/src/components/**/*.{ts,tsx}"],
       exclude: [
         "**/*.test.{ts,tsx}",
         "**/types.ts",
         "**/*.d.ts",
         "**/src/main.tsx",
+        "**/src/App.tsx"
       ],
     },
   },
