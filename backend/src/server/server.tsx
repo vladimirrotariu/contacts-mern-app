@@ -77,4 +77,4 @@ app.post("/contact", (req, res) => {
     .json({ message: "New contact created.", contact: createdContact });
 });
 
-app.listen(process.env.PORT || 3000); // start Node + Express server on port 5000
+app.listen(+process.env.PORT || 8080); // start Node + Express server on port 5000

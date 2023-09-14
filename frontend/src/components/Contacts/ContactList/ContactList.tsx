@@ -12,7 +12,7 @@ const ContactList = () => {
 
   useEffect(() => {
     const fetchContacts = async () => {
-      const response = await fetch("http://localhost:5000/contacts");
+      const response = await fetch("https://contacts-09i3.onrender.com/contacts");
 
       const responseData = await response.json() as { contacts: ContactStored[] };
 

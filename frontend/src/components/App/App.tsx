@@ -14,7 +14,7 @@ const App = () => {
       setIsLoading(true);
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const response = await fetch("http://localhost:5000/contacts");
+      const response = await fetch("https://contacts-09i3.onrender.com/contacts");
 
       setIsLoading(false);
     };
@@ -35,7 +35,7 @@ const App = () => {
 
       let hasError = false;
 
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("https://contacts-09i3.onrender.com/contact", {
         method: "POST",
         body: JSON.stringify(newContact),
         headers: {
