@@ -4,7 +4,7 @@
 
 An app to store your contacts, with information such as name, age, email, and phone number.
 
-* CHECK THE WEBSITE AND INTERACT (I.E. INTRODUCE A CONTACT) HERE: [Contacts](https://contacts-mern-app.vercel.app/)
+* CHECK THE WEBSITE AND INTERACT (I.E. INTRODUCE A CONTACT) HERE: [Live Site](https://contacts-mern-app.vercel.app/)
 
 ## Testing
 
