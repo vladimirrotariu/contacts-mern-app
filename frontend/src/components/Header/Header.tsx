@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = (): React.ReactElement => {
   return (
     <header className="header">
-      <h1>My Contacts List</h1>
+      <h1>Contacts</h1>
     </header>
   );
 };
