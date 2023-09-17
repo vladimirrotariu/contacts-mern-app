@@ -77,7 +77,7 @@ app.post("/contact", (req, res) => {
     .json({ message: "New contact created.", contact: createdContact });
 });
 
-app.delete("https://contacts-09i3.onrender.com/contact-delete", async (req, res) => {
+app.delete("/contact-delete", async (req, res) => {
   const {name: nameContactToBeDeleted, phone: phoneContactToBeDeleted} = req.body as {name: string, phone: string};
 
   contactsStoreOperations.delete(nameContactToBeDeleted, phoneContactToBeDeleted);

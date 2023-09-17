@@ -54,10 +54,10 @@ class ContactsStore {
     await connectMongoDB();
 
     const collection = db().collection("contacts");
-    const toBeDeletedContact = await collection.findOne({name: name, phone:phone})
+    const toBeDeletedContact = await collection.findOne({name: name, phone: phone})
 
     if (toBeDeletedContact) {
-      await collection.findOneAndDelete({name: name, phone:phone});
+      await collection.findOneAndDelete({name: name, phone: phone});
     } else {
       throw new Error("Could not delete contact!");
     }
