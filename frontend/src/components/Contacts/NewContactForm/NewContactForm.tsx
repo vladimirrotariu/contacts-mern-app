@@ -72,7 +72,7 @@ const NewContactForm = ({ onAddContact, textButton }: NewContactFormProps) => {
           onChange={phoneChangeHandler}
           placeholder="+31094887472999"
         />
-        <Button type="submit" textButton={textButton} actionOnClick={() => console.log(`Just created contact ${enteredName}`)} />;
+        <Button type="submit" textButton={textButton} actionOnClick={() => console.log(`Just created contact ${enteredName}`)} />
       </form>
     </section>
   );
