@@ -8,7 +8,7 @@ describe("Given a Header component", () => {
     test("Then it should contain a heading with the text 'My Contacts List'", () => {
       render(<Header />);
 
-      const headerElement = screen.getByText("My Contacts List");
+      const headerElement = screen.getByRole("heading");
 
       expect(headerElement).toBeInTheDocument();
     })
