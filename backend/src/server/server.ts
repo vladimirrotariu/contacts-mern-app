@@ -77,4 +77,10 @@ app.post("/contact", (req, res) => {
     .json({ message: "New contact created.", contact: createdContact });
 });
 
-app.listen(+process.env.PORT || 8080); // start Node + Express server on port 5000
+app.delete("https://contacts-09i3.onrender.com/contact-delete", async (req, res) => {
+  const {name: nameContactToBeDeleted, phone: phoneContactToBeDeleted} = req.body as {name: string, phone: string};
+
+  contactsStoreOperations.delete(nameContactToBeDeleted, phoneContactToBeDeleted);
+})
+
+app.listen(process.env.PORT || 8080); // start Node + Express server on port 5000
