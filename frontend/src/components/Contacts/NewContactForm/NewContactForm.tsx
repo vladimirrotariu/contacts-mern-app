@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { FormEventHandler, useState } from "react";
 
 import React from "react";
@@ -71,7 +72,7 @@ const NewContactForm = ({ onAddContact, textButton }: NewContactFormProps) => {
           onChange={phoneChangeHandler}
           placeholder="+31094887472999"
         />
-        <Button type="submit" textButton={textButton}></Button>
+        <Button type="submit" textButton={textButton} actionOnClick={() => console.log(`Just created contact ${enteredName}`)} />;
       </form>
     </section>
   );

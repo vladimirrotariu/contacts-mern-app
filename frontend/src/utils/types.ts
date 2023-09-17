@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 export interface ButtonProps extends PropsWithChildren {
   type: "button" | "submit";
   textButton: string;
+  actionOnClick: () => void;
 }
 
 export interface InputProps extends PropsWithChildren {
