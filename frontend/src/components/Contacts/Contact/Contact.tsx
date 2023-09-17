@@ -11,7 +11,7 @@ const Contact = ({ name, age, email, phone }: ContactProps): React.ReactElement 
       <p>Age: {age} years</p>
       <p>Email: {email}</p>
       <p>Phone: {phone}</p>
-      <Button type="button" textButton="DELETE" actionOnClick={() => deleteContact(phone)} />
+      <Button type="button" textButton="DELETE" actionOnClick={() => deleteContact(name, phone)} />
     </li>
   );
 };
