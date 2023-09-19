@@ -34,6 +34,10 @@ const NewContactForm = ({ onAddContact, textButton }: NewContactFormProps) => {
   const submitContactHandler: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     onAddContact(enteredName, enteredAge, enteredEmail, enteredPhone);
+    setEnteredAge("");
+    setEnteredEmail("");
+    setEnteredName("");
+    setEnteredPhone("");
   };
 
   return (
